@@ -1,0 +1,657 @@
+.earbuds-promo {
+    position: relative;
+    width: min(1300px, 88%);
+    margin: 64px auto 0;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 56px 72px;
+    background: linear-gradient(115deg, #f3ede4 0%, #eaf3fb 55%, #dcecfb 100%);
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.earbuds-promo__dots {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    width: 160px;
+    height: 90px;
+    background-image: radial-gradient(rgba(11, 30, 51, 0.14) 1.5px, transparent 1.5px);
+    background-size: 12px 12px;
+    pointer-events: none;
+}
+
+.earbuds-promo__stage {
+    position: absolute;
+    width: 460px;
+    height: 460px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, calc(-50% - 5px));
+    border-radius: 50%;
+    background: radial-gradient(circle at 38% 32%, rgba(42, 168, 242, 0.28), transparent 62%),
+        radial-gradient(circle at 66% 68%, rgba(255, 107, 32, 0.22), transparent 58%);
+    filter: blur(6px);
+    pointer-events: none;
+}
+
+.earbuds-promo__ring {
+    position: absolute;
+    width: 290px;
+    height: 290px;
+    left: 50%;
+    top: 50%;
+    transform: translate(calc(-50% - 8px), calc(-50% - 5px));
+    border-radius: 50%;
+    border: 2px solid transparent;
+    background:
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(135deg, var(--orange), var(--blue-bright)) border-box;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.earbuds-promo__platform {
+    position: absolute;
+    width: 320px;
+    height: 56px;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(calc(-50% - 8px));
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(11, 30, 51, 0.16), transparent 72%);
+    pointer-events: none;
+}
+
+.earbuds-promo__content {
+    position: relative;
+    z-index: 1;
+    flex: 0 0 46%;
+    min-width: 0;
+}
+
+.earbuds-promo__image {
+    position: relative;
+    z-index: 1;
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.earbuds-promo__img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 20px 24px rgba(11, 30, 51, 0.16));
+}
+
+.earbuds-promo__img--closed {
+    max-width: 250px;
+    z-index: 2;
+    transform: translateY(14px);
+}
+
+.earbuds-promo__img--open {
+    max-width: 285px;
+    z-index: 1;
+    margin-top: -4px;
+}
+
+.earbuds-promo h2 {
+    font-size: clamp(30px, 3.6vw, 44px);
+    line-height: 1.12;
+    letter-spacing: -0.5px;
+    font-weight: 800;
+    color: var(--navy);
+}
+
+.earbuds-promo__blue {
+    color: var(--blue);
+}
+
+.earbuds-promo__orange {
+    color: var(--orange);
+}
+
+.earbuds-promo__rule {
+    width: 60px;
+    height: 4px;
+    margin: 16px 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--blue) 0%, var(--blue) 50%, var(--orange) 50%, var(--orange) 100%);
+}
+
+.earbuds-promo__description {
+    max-width: 380px;
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.earbuds-promo__features {
+    display: flex;
+    gap: 20px;
+    margin-top: 26px;
+}
+
+.earbuds-promo__feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding-right: 20px;
+    border-right: 1px solid rgba(11, 30, 51, 0.12);
+    max-width: 100px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--navy);
+    text-align: center;
+}
+
+.earbuds-promo__feature:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+.earbuds-promo__feature-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.earbuds-promo__feature-icon--blue {
+    background: var(--blue);
+}
+
+.earbuds-promo__feature-icon--orange {
+    background: var(--orange);
+}
+
+.earbuds-promo__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    padding: 15px 28px;
+    border-radius: 999px;
+    background: var(--blue);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+@media (max-width: 1000px) {
+    .earbuds-promo {
+        aspect-ratio: 16 / 9;
+        height: auto;
+        min-height: 300px;
+        max-height: 460px;
+        gap: 24px;
+        padding: 28px 32px;
+        margin-top: 40px;
+        text-align: left;
+    }
+
+    .earbuds-promo__content {
+        flex: 0 0 55%;
+        width: auto;
+    }
+
+    .earbuds-promo h2 {
+        font-size: clamp(20px, 3.6vw, 30px);
+    }
+
+    .earbuds-promo__description {
+        font-size: 13.5px;
+    }
+
+    .earbuds-promo__features {
+        margin-top: 16px;
+        gap: 12px;
+    }
+
+    .earbuds-promo__img--closed {
+        max-width: 140px;
+        transform: translateY(8px);
+    }
+
+    .earbuds-promo__img--open {
+        max-width: 160px;
+        margin-top: -6px;
+    }
+
+    .earbuds-promo__stage {
+        width: 250px;
+        height: 250px;
+    }
+
+    .earbuds-promo__ring {
+        width: 175px;
+        height: 175px;
+    }
+
+    .earbuds-promo__platform {
+        width: 170px;
+        height: 32px;
+        bottom: 16px;
+    }
+}
+
+@media (max-width: 700px) {
+    .earbuds-promo {
+        min-height: 260px;
+        max-height: 420px;
+        gap: 16px;
+        padding: 18px 20px;
+    }
+
+    .earbuds-promo h2 {
+        font-size: clamp(15px, 4.6vw, 20px);
+        line-height: 1.15;
+    }
+
+    .earbuds-promo__rule {
+        margin: 6px 0;
+        width: 40px;
+        height: 3px;
+    }
+
+    .earbuds-promo__description {
+        font-size: 10.5px;
+        line-height: 1.35;
+        max-width: none;
+    }
+
+    .earbuds-promo__features {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 8px;
+        gap: 5px;
+    }
+
+    .earbuds-promo__feature {
+        flex-direction: row;
+        align-items: center;
+        gap: 6px;
+        padding-right: 0;
+        border-right: none;
+        max-width: none;
+        font-size: 9.5px;
+        line-height: 1.2;
+        text-align: left;
+    }
+
+    .earbuds-promo__feature-icon {
+        width: 18px;
+        height: 18px;
+        font-size: 8px;
+    }
+
+    .earbuds-promo__btn {
+        margin-top: 8px;
+        padding: 7px 14px;
+        font-size: 10.5px;
+    }
+
+    .earbuds-promo__img--closed {
+        max-width: 105px;
+        transform: translateY(6px);
+    }
+
+    .earbuds-promo__img--open {
+        max-width: 120px;
+        margin-top: -4px;
+    }
+
+    .earbuds-promo__stage {
+        width: 195px;
+        height: 195px;
+    }
+
+    .earbuds-promo__ring {
+        width: 135px;
+        height: 135px;
+    }
+
+    .earbuds-promo__platform {
+        width: 130px;
+        height: 26px;
+        bottom: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+    .earbuds-promo__stage,
+    .earbuds-promo__ring,
+    .earbuds-promo__platform {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .earbuds-promo {
+        padding: 16px 20px;
+        border-radius: 18px;
+    }
+}
+
+.product-row {
+    width: min(1300px, 88%);
+    margin: 56px auto 0;
+}
+
+.product-row__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.product-row__header h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--navy);
+}
+
+.product-row__header a {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blue);
+    text-decoration: none;
+}
+
+.product-row__view-all-mobile {
+    display: none;
+}
+
+.product-row__tag {
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: #fdeceb;
+    color: #e0453c;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.product-row__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 1000px) {
+    .product-row__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-row__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 420px) {
+    .product-row__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-row__header-link {
+        display: none;
+    }
+
+    .product-row__view-all-mobile {
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--blue);
+        text-decoration: none;
+    }
+}
+
+.delivery-cta {
+    position: relative;
+    width: min(1300px, 88%);
+    margin: 56px auto 0;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding: 28px 72px;
+    background: linear-gradient(125deg, #0b1e33 0%, #123a5e 100%);
+    border-radius: 24px;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.delivery-cta__dots {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 160px;
+    height: 90px;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1.5px, transparent 1.5px);
+    background-size: 12px 12px;
+    pointer-events: none;
+}
+
+.delivery-cta__glow {
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    left: -180px;
+    bottom: -220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 107, 32, 0.28), transparent 70%);
+    pointer-events: none;
+}
+
+.delivery-cta__content {
+    position: relative;
+    z-index: 1;
+    flex: 0 0 40%;
+    min-width: 0;
+}
+
+.delivery-cta__content h2 {
+    font-size: clamp(24px, 2.8vw, 34px);
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.delivery-cta__orange {
+    color: var(--orange);
+}
+
+.delivery-cta__rule {
+    width: 60px;
+    height: 4px;
+    margin: 16px 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--blue) 0%, var(--blue) 50%, var(--orange) 50%, var(--orange) 100%);
+}
+
+.delivery-cta__content p {
+    font-size: 14px;
+    color: #b9c6d1;
+    max-width: 320px;
+    line-height: 1.55;
+}
+
+.delivery-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 26px;
+    padding: 14px 26px;
+    border-radius: 999px;
+    background: var(--orange);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.delivery-cta__image {
+    position: relative;
+    z-index: 1;
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.delivery-cta__image img {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    filter: drop-shadow(0 20px 24px rgba(0, 0, 0, 0.35));
+}
+
+@media (max-width: 1000px) {
+    .delivery-cta {
+        aspect-ratio: 16 / 9;
+        height: auto;
+        min-height: 260px;
+        max-height: 400px;
+        text-align: left;
+        margin-top: 40px;
+        gap: 20px;
+        padding: 24px 28px;
+    }
+
+    .delivery-cta__content {
+        flex: 0 0 55%;
+        width: auto;
+    }
+
+    .delivery-cta__content h2 {
+        font-size: clamp(18px, 4.2vw, 26px);
+    }
+
+    .delivery-cta__rule {
+        margin: 8px 0;
+    }
+
+    .delivery-cta__content p {
+        font-size: 12.5px;
+        max-width: none;
+    }
+
+    .delivery-cta__btn {
+        margin-top: 12px;
+        padding: 10px 18px;
+        font-size: 12px;
+    }
+
+    .delivery-cta__image img {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .delivery-cta {
+        min-height: 220px;
+        max-height: 340px;
+        padding: 18px 20px;
+        border-radius: 18px;
+    }
+
+    .delivery-cta__content h2 {
+        font-size: clamp(15px, 5vw, 20px);
+    }
+
+    .delivery-cta__content p {
+        font-size: 11px;
+    }
+
+    .delivery-cta__image img {
+        max-width: 140px;
+    }
+}
+
+.repairs-promo {
+    position: relative;
+    width: min(1300px, 88%);
+    margin: 56px auto 0;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    padding: 48px 72px;
+    background-size: cover;
+    background-position: 60% 50%;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.repairs-promo__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        100deg,
+        rgba(4, 14, 23, 0.9) 0%,
+        rgba(4, 14, 23, 0.78) 30%,
+        rgba(4, 14, 23, 0.4) 55%,
+        rgba(4, 14, 23, 0.1) 100%
+    );
+}
+
+.repairs-promo__content {
+    position: relative;
+    z-index: 1;
+    max-width: 420px;
+}
+
+.repairs-promo__content h2 {
+    font-size: clamp(26px, 3vw, 36px);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.repairs-promo__orange {
+    color: var(--orange);
+}
+
+.repairs-promo__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 28px;
+    padding: 14px 26px;
+    border-radius: 999px;
+    background: var(--orange);
+    color: #ffffff;
+    font-size: 13.5px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .repairs-promo {
+        padding: 32px 24px;
+        border-radius: 18px;
+        min-height: 280px;
+    }
+
+    .repairs-promo__content h2 {
+        font-size: clamp(20px, 6vw, 26px);
+    }
+}

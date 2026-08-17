@@ -1,0 +1,44 @@
+:root {
+    --navy: #0b1e33;
+    --blue: #1f8fe0;
+    --blue-bright: #2aa8f2;
+    --orange: #ff6b20;
+    --white: #ffffff;
+    --text: #5b6b79;
+    --panel: #f3f6f9;
+    --border: #e6eaee;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--white);
+    color: var(--navy);
+    font-family: "Inter", Arial, sans-serif;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}

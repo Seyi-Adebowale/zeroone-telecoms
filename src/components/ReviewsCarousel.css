@@ -1,0 +1,125 @@
+.reviews-carousel {
+    width: min(1300px, 88%);
+    margin: 56px auto 0;
+}
+
+.reviews-carousel__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.reviews-carousel__header h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.reviews-carousel__summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text);
+}
+
+.reviews-carousel__stars {
+    color: var(--orange);
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.reviews-carousel__arrows {
+    flex-shrink: 0;
+    display: flex;
+    gap: 8px;
+}
+
+.reviews-carousel__arrows button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: #ffffff;
+    color: var(--navy);
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.reviews-carousel__arrows button:hover {
+    background: var(--navy);
+    color: #ffffff;
+}
+
+.reviews-carousel__track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+}
+
+.reviews-carousel__track::-webkit-scrollbar {
+    display: none;
+}
+
+.review-card {
+    flex: 0 0 320px;
+    scroll-snap-align: start;
+    padding: 24px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.review-card__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.review-card__head .reviews-carousel__stars {
+    font-size: 13px;
+}
+
+.review-card__date {
+    font-size: 11.5px;
+    color: var(--text);
+}
+
+.review-card__text {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--navy);
+    margin-bottom: 16px;
+}
+
+.review-card__name {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+@media (max-width: 700px) {
+    .review-card {
+        flex-basis: 260px;
+    }
+
+    .reviews-carousel__header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .reviews-carousel__arrows {
+        align-self: flex-end;
+    }
+}

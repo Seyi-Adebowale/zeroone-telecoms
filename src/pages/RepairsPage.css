@@ -1,0 +1,370 @@
+.repairs-page {
+    width: min(1300px, 88%);
+    margin: 0 auto;
+    padding: 48px 0 80px;
+}
+
+.repairs-page__intro {
+    max-width: 620px;
+    margin-bottom: 36px;
+}
+
+.repairs-page__intro h1 {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 12px;
+}
+
+.repairs-page__intro p {
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.repairs-page__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.repair-card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.repair-card__icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: var(--blue);
+    font-size: 20px;
+}
+
+.repair-card h3 {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.repair-card__desc {
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.repair-card__cta {
+    margin-top: auto;
+    padding: 11px;
+    border: none;
+    border-radius: 999px;
+    background: var(--navy);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.repairs-page__other {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 24px 28px;
+    background: #ffffff;
+    border: 1px dashed var(--border);
+    border-radius: 16px;
+}
+
+.repairs-page__other-icon {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--panel);
+    color: var(--navy);
+    font-size: 20px;
+}
+
+.repairs-page__other-text {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.repairs-page__other-text h3 {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 4px;
+}
+
+.repairs-page__other-text p {
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.repairs-page__other-cta {
+    flex-shrink: 0;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 999px;
+    background: var(--orange);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    .repairs-page__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .repairs-page__other {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .repairs-page__other-cta {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .repairs-page__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.repairs-page__booking {
+    position: relative;
+    margin-top: 56px;
+    padding: 40px;
+    background: var(--panel);
+    border-radius: 20px;
+    scroll-margin-top: 100px;
+}
+
+.repairs-page__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: #ffffff;
+    color: var(--navy);
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.repairs-page__close:hover {
+    background: var(--border);
+}
+
+.repairs-page__booking-layout {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+}
+
+.repairs-page__booking-main {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 560px;
+}
+
+.repairs-page__steps {
+    flex: 0 0 260px;
+    padding-left: 40px;
+    border-left: 1px solid var(--border);
+}
+
+.repairs-page__steps h3 {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 24px;
+}
+
+.repairs-page__step {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.repairs-page__step:last-child {
+    margin-bottom: 0;
+}
+
+.repairs-page__step-number {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #ffffff;
+    font-size: 12.5px;
+    font-weight: 800;
+}
+
+.repairs-page__step h4 {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 4px;
+}
+
+.repairs-page__step p {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--text);
+}
+
+.repairs-page__booking-intro {
+    max-width: 500px;
+    margin-bottom: 28px;
+}
+
+.repairs-page__booking-intro h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.repairs-page__booking-intro p {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.repairs-page__form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.repairs-page__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.repairs-page__field--full {
+    grid-column: 1 / -1;
+}
+
+.repairs-page__row-3 {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.repairs-page__field select,
+.repairs-page__field input,
+.repairs-page__field textarea {
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--navy);
+    background: #ffffff;
+    resize: vertical;
+}
+
+.repairs-page__field-error {
+    grid-column: 1 / -1;
+    margin-top: -8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #e0453c;
+}
+
+.repairs-page__submit {
+    grid-column: 1 / -1;
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 999px;
+    background: var(--navy);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .repairs-page__booking-layout {
+        flex-direction: column;
+    }
+
+    .repairs-page__booking-main {
+        max-width: none;
+        width: 100%;
+    }
+
+    .repairs-page__steps {
+        flex: none;
+        width: 100%;
+        padding-left: 0;
+        padding-top: 28px;
+        border-left: none;
+        border-top: 1px solid var(--border);
+    }
+}
+
+@media (max-width: 700px) {
+    .repairs-page__booking {
+        padding: 28px 24px;
+    }
+
+    .repairs-page__form {
+        grid-template-columns: 1fr;
+    }
+
+    .repairs-page__row-3 {
+        grid-template-columns: 1fr;
+    }
+}
