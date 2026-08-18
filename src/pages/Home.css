@@ -247,6 +247,10 @@
 }
 
 @media (max-width: 700px) {
+    .earbuds-promo__dots {
+        display: none;
+    }
+
     .earbuds-promo {
         min-height: 260px;
         max-height: 420px;

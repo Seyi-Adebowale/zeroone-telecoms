@@ -165,7 +165,7 @@ function Home() {
                 </div>
                 <div className="product-row__grid">
                     {bestSellers.map((p) => (
-                        <ProductCard product={p} key={p.id} hideBadge />
+                        <ProductCard product={p} key={p.id} badgeType="bestseller" />
                     ))}
                 </div>
                 <Link to="/shop" className="product-row__view-all-mobile">
@@ -205,7 +205,7 @@ function Home() {
                 </div>
                 <div className="product-row__grid">
                     {newArrivals.map((p) => (
-                        <ProductCard product={p} key={p.id} hideBadge />
+                        <ProductCard product={p} key={p.id} badgeType="new" />
                     ))}
                 </div>
                 <Link to="/shop" className="product-row__view-all-mobile">

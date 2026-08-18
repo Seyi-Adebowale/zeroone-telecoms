@@ -44,6 +44,22 @@
     background: #e0453c;
 }
 
+.product-card__badge--new {
+    background: #12a893;
+}
+
+.product-card__badge--star {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border-radius: 50%;
+    background: var(--orange);
+    font-size: 12px;
+}
+
 .product-card__image {
     display: flex;
     align-items: center;

@@ -4,7 +4,7 @@ import { formatPrice, discountPercent, getConditionLabel } from '../data/product
 import { useCart } from '../context/CartContext.jsx'
 import './ProductCard.css'
 
-function ProductCard({ product, hideBadge }) {
+function ProductCard({ product, hideBadge, badgeType }) {
     const { addItem } = useCart()
     const [justAdded, setJustAdded] = useState(false)
 
@@ -20,6 +20,12 @@ function ProductCard({ product, hideBadge }) {
                 <span className="product-card__badge product-card__badge--deal">
                     Save {discountPercent(product.price, product.originalPrice)}%
                 </span>
+            ) : badgeType === 'bestseller' ? (
+                <span className="product-card__badge product-card__badge--star" aria-label="Best Seller">
+                    <i className="fa-solid fa-star" />
+                </span>
+            ) : badgeType === 'new' ? (
+                <span className="product-card__badge product-card__badge--new">New</span>
             ) : (
                 !hideBadge && product.badge && (
                     <span

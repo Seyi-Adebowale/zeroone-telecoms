@@ -192,4 +192,9 @@
     .hero-carousel__slide {
         height: 460px;
     }
+
+    .hero-carousel__dots-bg {
+        width: 90px;
+        height: 50px;
+    }
 }
