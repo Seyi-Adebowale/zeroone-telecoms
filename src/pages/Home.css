@@ -289,7 +289,7 @@
         padding-right: 0;
         border-right: none;
         max-width: none;
-        font-size: 9.5px;
+        font-size: 11px;
         line-height: 1.2;
         text-align: left;
     }
@@ -297,7 +297,7 @@
     .earbuds-promo__feature-icon {
         width: 18px;
         height: 18px;
-        font-size: 8px;
+        font-size: 11px;
     }
 
     .earbuds-promo__btn {
