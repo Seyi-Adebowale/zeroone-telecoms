@@ -367,7 +367,7 @@
 }
 
 .product-row__header a {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
     color: var(--blue);
     text-decoration: none;
@@ -420,7 +420,7 @@
         display: block;
         margin-top: 20px;
         text-align: center;
-        font-size: 13px;
+        font-size: 15px;
         font-weight: 700;
         color: var(--blue);
         text-decoration: none;
