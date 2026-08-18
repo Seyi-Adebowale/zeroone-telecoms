@@ -1,12 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './HeroCarousel.css'
 
 const AUTO_ADVANCE_MS = 5000
+const SWIPE_THRESHOLD = 50
 
 function HeroCarousel({ slides }) {
     const [index, setIndex] = useState(0)
     const [paused, setPaused] = useState(false)
+    const touchStartX = useRef(null)
 
     useEffect(() => {
         if (paused) return undefined
@@ -18,11 +20,31 @@ function HeroCarousel({ slides }) {
 
     const goTo = (i) => setIndex((i + slides.length) % slides.length)
 
+    const handleTouchStart = (e) => {
+        touchStartX.current = e.touches[0].clientX
+        setPaused(true)
+    }
+
+    const handleTouchEnd = (e) => {
+        if (touchStartX.current !== null) {
+            const deltaX = e.changedTouches[0].clientX - touchStartX.current
+            if (deltaX > SWIPE_THRESHOLD) {
+                goTo(index - 1)
+            } else if (deltaX < -SWIPE_THRESHOLD) {
+                goTo(index + 1)
+            }
+        }
+        touchStartX.current = null
+        setPaused(false)
+    }
+
     return (
         <section
             className="hero-carousel"
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
         >
             <div className="hero-carousel__track" style={{ transform: `translateX(-${index * 100}%)` }}>
                 {slides.map((slide) => (

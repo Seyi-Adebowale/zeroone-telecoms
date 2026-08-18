@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import { CATEGORIES } from '../data/products.js'
@@ -28,9 +28,21 @@ function Header() {
     const [query, setQuery] = useState('')
     const [menuOpen, setMenuOpen] = useState(false)
     const [searchOpen, setSearchOpen] = useState(false)
+    const [cartBump, setCartBump] = useState(false)
+    const prevCount = useRef(count)
     const navigate = useNavigate()
     const location = useLocation()
     const searchParams = new URLSearchParams(location.search)
+
+    useEffect(() => {
+        if (count > prevCount.current) {
+            setCartBump(true)
+            const timer = setTimeout(() => setCartBump(false), 400)
+            prevCount.current = count
+            return () => clearTimeout(timer)
+        }
+        prevCount.current = count
+    }, [count])
 
     const handleSearch = (e) => {
         e.preventDefault()
@@ -77,7 +89,7 @@ function Header() {
 
                     <button
                         type="button"
-                        className="site-header__cart"
+                        className={cartBump ? 'site-header__cart site-header__cart--bump' : 'site-header__cart'}
                         onClick={openCart}
                         aria-label="Open cart"
                     >
@@ -126,11 +138,13 @@ function Header() {
 
             <button
                 type="button"
-                className={
-                    location.pathname === '/checkout'
-                        ? 'floating-cart floating-cart--hidden'
-                        : 'floating-cart'
-                }
+                className={[
+                    'floating-cart',
+                    location.pathname === '/checkout' ? 'floating-cart--hidden' : '',
+                    cartBump ? 'floating-cart--bump' : '',
+                ]
+                    .filter(Boolean)
+                    .join(' ')}
                 onClick={openCart}
                 aria-label="Open cart"
             >
