@@ -1,10 +1,24 @@
-import { createContext, useContext, useMemo, useState } from 'react'
+import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 
 const CartContext = createContext(null)
+const CART_STORAGE_KEY = 'zeroone-cart'
+
+function loadStoredItems() {
+    try {
+        const raw = localStorage.getItem(CART_STORAGE_KEY)
+        return raw ? JSON.parse(raw) : []
+    } catch {
+        return []
+    }
+}
 
 export function CartProvider({ children }) {
-    const [items, setItems] = useState([])
+    const [items, setItems] = useState(loadStoredItems)
     const [isOpen, setIsOpen] = useState(false)
+
+    useEffect(() => {
+        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items))
+    }, [items])
 
     const addItem = (product) => {
         setItems((prev) => {
