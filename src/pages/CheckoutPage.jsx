@@ -92,10 +92,6 @@ function CheckoutPage() {
                             </label>
                         </div>
                     </section>
-
-                    <button type="button" className="checkout-page__submit">
-                        <i className="fa-solid fa-lock" /> Pay Online
-                    </button>
                 </form>
 
                 <div className="checkout-page__summary">
@@ -138,6 +134,10 @@ function CheckoutPage() {
                             <span>{formatPrice(total)}</span>
                         </div>
                     </div>
+
+                    <button type="button" className="checkout-page__submit">
+                        <i className="fa-solid fa-lock" /> Pay Online
+                    </button>
                 </div>
             </div>
         </main>

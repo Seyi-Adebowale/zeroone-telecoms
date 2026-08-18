@@ -194,28 +194,6 @@
     line-height: 1.6;
 }
 
-.product-page__specs {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.product-page__specs tr {
-    border-bottom: 1px solid var(--border);
-}
-
-.product-page__specs th,
-.product-page__specs td {
-    text-align: left;
-    padding: 12px 0;
-    font-size: 14px;
-}
-
-.product-page__specs th {
-    width: 40%;
-    color: var(--navy);
-    font-weight: 700;
-}
-
 .product-page__reviews {
     display: flex;
     flex-direction: column;
@@ -414,12 +392,6 @@
 
     .product-page__tab-panel {
         font-size: 13.5px;
-    }
-
-    .product-page__specs th,
-    .product-page__specs td {
-        font-size: 13px;
-        padding: 10px 0;
     }
 
     .product-page__reviews-summary {

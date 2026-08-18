@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { PRODUCTS, formatPrice, discountPercent, getConditionLabel } from '../data/products.js'
-import { getProductDescription, getProductSpecs, getProductReviews, averageRating, ratingBreakdown } from '../data/productDetails.js'
+import { getProductDescription, getProductReviews, averageRating, ratingBreakdown } from '../data/productDetails.js'
 import { useCart } from '../context/CartContext.jsx'
 import ProductCard from '../components/ProductCard.jsx'
 import './ProductPage.css'
 
-const BASE_TABS = ['Description', 'Specifications']
+const BASE_TABS = ['Description']
 
 function Stars({ rating }) {
     return (
@@ -36,7 +36,6 @@ function ProductPage() {
     const reviews = getProductReviews(product)
     const rating = averageRating(reviews)
     const breakdown = ratingBreakdown(reviews)
-    const specs = getProductSpecs(product)
     const tabs =
         reviews.length > 0 ? [...BASE_TABS, 'Reviews'] : BASE_TABS
     const related = PRODUCTS.filter(
@@ -135,19 +134,6 @@ function ProductPage() {
 
                 <div className="product-page__tab-panel">
                     {tab === 'Description' && <p>{getProductDescription(product)}</p>}
-
-                    {tab === 'Specifications' && (
-                        <table className="product-page__specs">
-                            <tbody>
-                                {specs.map(([label, value]) => (
-                                    <tr key={label}>
-                                        <th>{label}</th>
-                                        <td>{value}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    )}
 
                     {tab === 'Reviews' && (
                         <div className="product-page__reviews">

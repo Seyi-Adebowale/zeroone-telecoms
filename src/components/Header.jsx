@@ -126,7 +126,11 @@ function Header() {
 
             <button
                 type="button"
-                className="floating-cart"
+                className={
+                    location.pathname === '/checkout'
+                        ? 'floating-cart floating-cart--hidden'
+                        : 'floating-cart'
+                }
                 onClick={openCart}
                 aria-label="Open cart"
             >
